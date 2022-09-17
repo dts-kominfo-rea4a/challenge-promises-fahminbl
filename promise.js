@@ -14,17 +14,17 @@ const promiseOutput = (emosi) => {
         vgc.forEach((emote) => {
           emosiVGC[emote.hasil] = (emosiVGC[emote.hasil] || 0) + 1;
         });
-        let { marah:marahIXX, 'tidak marah':tidakMarahIXX } = emosiIXX;
-        let { marah:marahVGC, 'tidak marah':tidakMarahVGC} = emosiVGC;
+        const { marah:marahIXX, 'tidak marah':tidakMarahIXX } = emosiIXX;
+        const { marah:marahVGC, 'tidak marah':tidakMarahVGC} = emosiVGC;
         if (emosi == 'marah') {
-          const hasil = marahIXX + marahVGC;
+          let hasil = marahIXX + marahVGC;
           resolve(hasil);
         } else {
-          const hasil = tidakMarahIXX + tidakMarahVGC;
+          let hasil = tidakMarahIXX + tidakMarahVGC;
           resolve(hasil);
         }
       } catch (err) {
-        throw(err);
+        console.log(err);
       }
   });
 };
